@@ -19,15 +19,15 @@ class infoActivePlugin extends plxPlugin {
 			echo '<tr><td>'.$key.'</td></tr>';
 		}
 		echo '</tbody></table>
-		<style>.unstyled-list,
-.unstyled-list~p{
+		<style>section .unstyled-list,
+section .unstyled-list~p{
   float: left;
   clear: left;
 }
-.unstyled-list {
+section .unstyled-list {
   padding: 0 2em
 }
-.unstyled-list~table{
+section .unstyled-list~table{
   border:solid;  
 }</style>';
 	?>
