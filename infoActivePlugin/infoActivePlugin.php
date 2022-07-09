@@ -18,10 +18,21 @@ class infoActivePlugin extends plxPlugin {
 		foreach($plxAdmin->plxPlugins->aPlugins as $key => $value) {
 			echo '<tr><td>'.$key.'</td></tr>';
 		}
-		echo '</tbody></table>';
+		echo '</tbody></table>
+		<style>.unstyled-list,
+.unstyled-list~p{
+  float: left;
+  clear: left;
+}
+.unstyled-list {
+  padding: 0 2em
+}
+.unstyled-list~table{
+  border:solid;  
+}</style>';
 	?>
 		<?php 
 	
 	}
 }
-?>	
+?>
