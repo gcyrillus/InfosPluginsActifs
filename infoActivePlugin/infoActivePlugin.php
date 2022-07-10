@@ -14,9 +14,10 @@ class infoActivePlugin extends plxPlugin {
 	public function AdminSettingsInfos() {
 	echo '<?php ';
 		?>
-		echo '<table><thead><tr><th>'.L_PLUGINS_ACTIVE_LIST.' </th></tr></thead><tbody>';
+		$plxAdmin = plxAdmin::getInstance();
+		echo '<table><thead><tr><th>'.L_PLUGINS_ACTIVE_LIST.' </th><th>'.L_PLUGINS_VERSION.'</th></tr></thead><tbody>';
 		foreach($plxAdmin->plxPlugins->aPlugins as $key => $value) {
-			echo '<tr><td>'.$key.'</td></tr>';
+			echo '<tr><td>'.$key.'</td><td>'.plxUtils::strCheck($value->getInfo('version')).'</td></tr>';
 		}
 		echo '</tbody></table>
 		<style>section .unstyled-list,
