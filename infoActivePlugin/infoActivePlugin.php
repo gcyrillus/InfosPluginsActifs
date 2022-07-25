@@ -14,10 +14,12 @@ class infoActivePlugin extends plxPlugin {
 	public function AdminSettingsInfos() {
 	echo '<?php ';
 		?>
-		$plxAdmin = plxAdmin::getInstance();
+		$plxAdmin = plxAdmin::getInstance(); 
 		echo '<table><thead><tr><th>'.L_PLUGINS_ACTIVE_LIST.' </th><th>'.L_PLUGINS_VERSION.'</th></tr></thead><tbody>';
 		foreach($plxAdmin->plxPlugins->aPlugins as $key => $value) {
-			echo '<tr><td>'.$key.'</td><td>'.plxUtils::strCheck($value->getInfo('version')).'</td></tr>';
+			$plugInstance=$plxAdmin->plxPlugins->getInstance($key);
+			$plugInstance->getInfos();
+			echo '<tr><td>'.$key.'</td><td>'.plxUtils::strCheck($plugInstance->getInfo("version")).'</td></tr>';
 		}
 		echo '</tbody></table>
 		<style>section .unstyled-list,
@@ -30,10 +32,12 @@ section .unstyled-list {
 }
 section .unstyled-list~table{
   border:solid;  
+}
+thead{
+  background:#bee
 }</style>';
 	?>
-		<?php 
-	
+		<?php 	
 	}
 }
 ?>
